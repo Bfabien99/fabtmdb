@@ -1,0 +1,205 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    min-height: 100vh;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    padding: 10px 20px;
+}
+
+header .banner{
+    text-align: center;
+}
+
+section{
+    padding: 20px;
+    width: 100%;
+    max-width: 1100px;
+    background-color: aliceblue;
+    margin: 10px 0px;
+}
+
+.section-title{
+    text-align: center;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5em;
+}
+
+.filmBox{
+    display: flex;
+    flex-direction: column;
+    background-color: lightblue;
+    box-shadow: 0px 0px 10px 0.2px #44444486;
+}
+
+.filmBox img{
+    height: 200px;
+    object-fit: cover;
+}
+
+.filmBox .details{
+    display: flex;
+    flex-direction: column;
+}
+
+.filmBox .details em{
+text-align: center;
+padding: 10px;
+background-color: #ddd;
+font-weight: bold;
+color: red;
+text-transform: uppercase;
+}
+
+.filmBox .title{
+    font-size: 1.1em;
+    text-align: center;
+    background-color: #444;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.filmBox .title a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.filmBox .title a:hover{
+    color: #ccc;
+    transition: all .2s ease-in-out;
+}
+
+.filmBox .description{
+    text-align: justify;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.filmDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.filmDetails img{
+    width: 100%;
+    max-width: 300px;
+    justify-self: center;
+    align-self: center;
+    box-shadow: 0px 0px 10px 2px #4f4e4e89;
+}
+
+.filmDetails .visit{
+    text-decoration: none;
+    color: blue;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid blue;
+    margin: 2px;
+    width: fit-content;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.filmDetails .details{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.filmDetails .genres{
+    width: fit-content;
+    max-width: 700px;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 1.2em;
+    border: 1px solid;
+    padding: 5px;
+    margin: 1em 0px;
+}
+
+.filmDetails .genres .genre{
+    text-decoration: none;
+    color: #444;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.filmDetails .genres .genre:hover{
+    color: red;
+    transition: all .1s ease-in-out;
+}
+
+.filmDetails .company{
+    margin: 1em 0px;
+    display: flex;
+    overflow-x: auto;
+    gap: 5px;
+    padding: 5px;
+}
+
+.filmDetails .companyBox img{
+    width: 150px;
+    height: 100px;
+    background-color: #fff;
+    padding: 5px;
+}
+
+.filmDetails .description{
+    padding: 5px;
+    font-size: 1.3em;
+}
+
+.filmDetails .title{
+    text-align: center;
+}
+
+.filmDetails .table{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    width: 100%;
+    justify-self: center;
+    align-self: center;
+    background-color: #303030b5;
+}
+
+.filmDetails .table .col{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border: 1px solid ;
+}
+
+.filmDetails .table .col span:nth-child(1){
+    font-size: 1.1em;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 0px 0px 3px #fff;
+}
+
+.filmDetails .table .col span:nth-child(2){
+    font-size: 1.2em;
+    color: #fff;
+}
