@@ -109,16 +109,48 @@ text-transform: uppercase;
     box-shadow: 0px 0px 10px 2px #4f4e4e89;
 }
 
-.filmDetails .visit{
+.filmDetails .links{
+    display: flex;
+    padding: 5px;
+    margin: auto;
+    gap: 1em;
+}
+
+.filmDetails .links a{
+    width: fit-content;
     text-decoration: none;
-    color: blue;
     text-align: center;
     padding: 5px;
+}
+
+.filmDetails .links .to-visit{
+    color: blue;
     border: 1px solid blue;
-    margin: 2px;
-    width: fit-content;
-    margin: auto;
-    margin-top: 5px;
+}
+
+.filmDetails .links .to-love{
+    color: red;
+    border: 1px solid red;
+}
+
+.filmDetails .links .to-watch{
+    color: green;
+    border: 1px solid green;
+}
+
+.filmDetails .links .to-visit:hover{
+    color: white;
+    background-color:blue;
+}
+
+.filmDetails .links .to-love:hover{
+    color: white;
+    background-color:red;
+}
+
+.filmDetails .links .to-watch:hover{
+    color: white;
+    background-color:green;
 }
 
 .filmDetails .details{

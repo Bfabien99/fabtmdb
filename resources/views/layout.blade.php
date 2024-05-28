@@ -12,11 +12,22 @@
                 FABTMDB
             </p>
             <nav>
-                <li><a href="/">Home</a></li>
-                <li><a href="/login">Login</a></li>
-                <li><a href="/register">Register</a></li>
+                <ul>
+                     <li><a href="/">Home</a></li>
                 <li><a href="/movies">Movies</a></li>
                 <li><a href="/tv">Series</a></li>
+                </ul>
+               <ul>
+                @auth
+                <li><a href="/profil">Profil</a></li>
+                <li><a href="/favorites">Favorites</a></li>
+                <li><a href="/to-watch">watchlist</a></li>
+                <li><a href="/logout">Logout</a></li>
+                @else
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+                @endauth
+               </ul>
             </nav>
         </header>
         <main>
