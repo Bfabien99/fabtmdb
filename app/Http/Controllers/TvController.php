@@ -8,10 +8,14 @@ use Illuminate\Support\Facades\Http;
 class TvController extends Controller
 {
     public function list(){
+        request()->validate(
+            ['page'=>'numeric|min:1|max:500']
+        );
+        request('page') > 0 ? $page = request('page') : $page = 1;
         $response_discover_tv = Http::withHeaders([
             'accept' => 'application/json',
             'Authorization' => 'Bearer '.env("TMDB_TOKEN")
-        ])->get('https://api.themoviedb.org/3/discover/tv?include_adult=false');
+        ])->get('https://api.themoviedb.org/3/discover/tv?include_adult=false&page='.$page);
         return view('series.list', ['discover_tv' => json_decode($response_discover_tv->getBody())]);
     }
 

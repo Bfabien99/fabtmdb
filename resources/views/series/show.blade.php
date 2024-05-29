@@ -11,9 +11,9 @@
         <div class="grid">
             @foreach ($tv->seasons as $season)
             <div class="filmDetails">
-                <img src="https://image.tmdb.org/t/p/w300/{{ $season->poster_path }}" alt="">
+                <img class="season-img" src="https://image.tmdb.org/t/p/w300/{{ $season->poster_path }}" alt="{{ $season->name }}">
                 <div class="details" style="border:1px solid">
-                    <h4 class="title">{{ $season->name }}</h4>
+                    <h4 class="title text-white">{{ $season->name }}</h4>
                     <div class="table">
                         <p class="col"><span>Nb Ep</span><span>{{ $season->episode_count }}</span></p>
                         <p class="col"><span>Air Date</span><span>{{ $season->air_date }}</span></p>

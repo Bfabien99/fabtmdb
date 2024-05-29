@@ -1,6 +1,7 @@
 @extends('layout')
 @section('content')
-    <form action="/register" method="post">
+    <form action="/register" method="post" class="form">
+        <h3>Register</h3>
         @csrf
         @if (session()->has('error'))
             <small class="error">{{ session('error') }}</small>

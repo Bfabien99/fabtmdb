@@ -36,4 +36,45 @@ class UserController extends Controller
         auth()->logout();
         return redirect('/');
     }
+
+    public function profilPage(){
+        return view('users.profil');
+    }
+
+    public function profil(){
+        request()->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:6|confirmed',
+            'password_confirmation' => ['required'],
+        ]);
+        auth()->user()->update([
+            'password' => bcrypt(request('password')),
+            'email'    => request('email')
+        ]);
+        return back()->withInput();
+    }
+
+    public function favorites(){
+
+    }
+
+    public function AddFavorite(){
+        
+    }
+
+    public function RemoveFavorite(){
+        
+    }
+
+    public function watchlists(){
+
+    }
+
+    public function AddWatchlist(){
+        
+    }
+
+    public function RemoveWatchlist(){
+        
+    }
 }

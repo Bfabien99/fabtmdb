@@ -1,17 +1,20 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     min-width: 100%;
     min-height: 100vh;
+    background-color: #17072e;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='152' height='152' viewBox='0 0 152 152'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='temple' fill='%239155f2' fill-opacity='0.4'%3E%3Cpath d='M152 150v2H0v-2h28v-8H8v-20H0v-2h8V80h42v20h20v42H30v8h90v-8H80v-42h20V80h42v40h8V30h-8v40h-42V50H80V8h40V0h2v8h20v20h8V0h2v150zm-2 0v-28h-8v20h-20v8h28zM82 30v18h18V30H82zm20 18h20v20h18V30h-20V10H82v18h20v20zm0 2v18h18V50h-18zm20-22h18V10h-18v18zm-54 92v-18H50v18h18zm-20-18H28V82H10v38h20v20h38v-18H48v-20zm0-2V82H30v18h18zm-20 22H10v18h18v-18zm54 0v18h38v-20h20V82h-18v20h-20v20H82zm18-20H82v18h18v-18zm2-2h18V82h-18v18zm20 40v-18h18v18h-18zM30 0h-2v8H8v20H0v2h8v40h42V50h20V8H30V0zm20 48h18V30H50v18zm18-20H48v20H28v20H10V30h20V10h38v18zM30 50h18v18H30V50zm-2-40H10v18h18V10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
-main{
+main {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -19,59 +22,116 @@ main{
     align-items: center;
 }
 
-header{
+header {
     padding: 10px 20px;
+    background-color: #17072e;
 }
 
-header .banner{
+header .banner {
     text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.3em;
+    letter-spacing: 0.5em;
 }
 
-section{
+header nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 2em;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+header nav ul * {
+    border: none;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+}
+
+header nav ul li {
+    width: 80px;
+    text-align: center;
+    border: 1px solid;
+    font-size: 1.1em;
+    margin: 1px;
+}
+header nav ul li form input {
+    text-align: center;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+header nav ul li:hover {
+    background-color: #fff;
+    transition: all 0.2s ease-in-out;
+}
+
+header nav ul li:hover * {
+    color: #17072e;
+    transition: all 0.2s ease-in-out;
+}
+
+section {
     padding: 20px;
     width: 100%;
     max-width: 1100px;
-    background-color: aliceblue;
+    background-color: #17072ed0;
     margin: 10px 0px;
 }
 
-.section-title{
+.section-title {
     text-align: center;
+    color: #fff;
+    margin: 0.8em;
 }
 
-.grid{
+.grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5em;
 }
 
-.filmBox{
+.filmBox {
     display: flex;
     flex-direction: column;
     background-color: lightblue;
     box-shadow: 0px 0px 10px 0.2px #44444486;
 }
 
-.filmBox img{
+.filmBox img {
     height: 200px;
     object-fit: cover;
 }
 
-.filmBox .details{
+.filmBox .details {
     display: flex;
     flex-direction: column;
 }
 
-.filmBox .details em{
-text-align: center;
-padding: 10px;
-background-color: #ddd;
-font-weight: bold;
-color: red;
-text-transform: uppercase;
+.filmBox .details em {
+    text-align: center;
+    padding: 10px;
+    background-color: #ddd;
+    font-weight: bold;
+    color: red;
+    text-transform: uppercase;
 }
 
-.filmBox .title{
+.filmBox .title {
     font-size: 1.1em;
     text-align: center;
     background-color: #444;
@@ -79,29 +139,29 @@ text-transform: uppercase;
     text-transform: uppercase;
 }
 
-.filmBox .title a{
+.filmBox .title a {
     text-decoration: none;
     color: #fff;
 }
 
-.filmBox .title a:hover{
+.filmBox .title a:hover {
     color: #ccc;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
-.filmBox .description{
+.filmBox .description {
     text-align: justify;
     padding: 10px;
     font-size: 1.2em;
 }
 
-.filmDetails{
+.filmDetails {
     display: flex;
     flex-direction: column;
     gap: 1em;
 }
 
-.filmDetails img{
+.filmDetails img {
     width: 100%;
     max-width: 300px;
     justify-self: center;
@@ -109,57 +169,57 @@ text-transform: uppercase;
     box-shadow: 0px 0px 10px 2px #4f4e4e89;
 }
 
-.filmDetails .links{
+.filmDetails .links {
     display: flex;
     padding: 5px;
     margin: auto;
     gap: 1em;
 }
 
-.filmDetails .links a{
+.filmDetails .links a {
     width: fit-content;
     text-decoration: none;
     text-align: center;
     padding: 5px;
 }
 
-.filmDetails .links .to-visit{
+.filmDetails .links .to-visit {
     color: blue;
     border: 1px solid blue;
 }
 
-.filmDetails .links .to-love{
+.filmDetails .links .to-love {
     color: red;
     border: 1px solid red;
 }
 
-.filmDetails .links .to-watch{
+.filmDetails .links .to-watch {
     color: green;
     border: 1px solid green;
 }
 
-.filmDetails .links .to-visit:hover{
+.filmDetails .links .to-visit:hover {
     color: white;
-    background-color:blue;
+    background-color: blue;
 }
 
-.filmDetails .links .to-love:hover{
+.filmDetails .links .to-love:hover {
     color: white;
-    background-color:red;
+    background-color: red;
 }
 
-.filmDetails .links .to-watch:hover{
+.filmDetails .links .to-watch:hover {
     color: white;
-    background-color:green;
+    background-color: green;
 }
 
-.filmDetails .details{
+.filmDetails .details {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.filmDetails .genres{
+.filmDetails .genres {
     width: fit-content;
     max-width: 700px;
     flex-wrap: wrap;
@@ -170,19 +230,19 @@ text-transform: uppercase;
     margin: 1em 0px;
 }
 
-.filmDetails .genres .genre{
+.filmDetails .genres .genre {
     text-decoration: none;
     color: #444;
     font-size: 1.1em;
     font-weight: bold;
 }
 
-.filmDetails .genres .genre:hover{
+.filmDetails .genres .genre:hover {
     color: red;
-    transition: all .1s ease-in-out;
+    transition: all 0.1s ease-in-out;
 }
 
-.filmDetails .company{
+.filmDetails .company {
     margin: 1em 0px;
     display: flex;
     overflow-x: auto;
@@ -190,23 +250,23 @@ text-transform: uppercase;
     padding: 5px;
 }
 
-.filmDetails .companyBox img{
+.filmDetails .companyBox img {
     width: 150px;
     height: 100px;
     background-color: #fff;
     padding: 5px;
 }
 
-.filmDetails .description{
+.filmDetails .description {
     padding: 5px;
     font-size: 1.3em;
 }
 
-.filmDetails .title{
+.filmDetails .title {
     text-align: center;
 }
 
-.filmDetails .table{
+.filmDetails .table {
     display: flex;
     flex-direction: column;
     margin-top: 1em;
@@ -216,22 +276,104 @@ text-transform: uppercase;
     background-color: #303030b5;
 }
 
-.filmDetails .table .col{
+.filmDetails .table .col {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 5px;
-    border: 1px solid ;
+    border: 1px solid;
 }
 
-.filmDetails .table .col span:nth-child(1){
+.filmDetails .table .col span:nth-child(1) {
     font-size: 1.1em;
     text-transform: uppercase;
     font-weight: bold;
     text-shadow: 0px 0px 3px #fff;
 }
 
-.filmDetails .table .col span:nth-child(2){
+.filmDetails .table .col span:nth-child(2) {
     font-size: 1.2em;
     color: #fff;
+}
+
+.other-details {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    gap: 1em;
+    width: 100%;
+    margin: auto;
+}
+
+.pages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+.nav-pages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+.nav-pages a {
+    text-decoration: none;
+    color: blue;
+}
+
+.nav-pages a:hover {
+    color: red;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    text-align: center;
+}
+
+.text-white{
+    color: #fff;
+}
+
+.form{
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3em;
+    justify-content: center;
+}
+
+.form .group{
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form .group input{
+    width: 100%;
+    max-width: 300px;
+    height: 30px;
+    padding: 5px 15px;
+}
+
+.season-img{
+    width: 300px;
+    height: 300px;
+    background-color: #17072e;
+}
+
+.season-img:hover{
+    scale: 1.1;
+    transition: all .2s ease-in-out;
 }

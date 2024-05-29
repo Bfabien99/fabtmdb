@@ -2,12 +2,18 @@
 <div class="filmDetails">
     <img src="https://image.tmdb.org/t/p/w400/{{ $tv->poster_path }}" alt="">
     <div class="details">
-        <h2 class="title">{{ $tv->name }}</h2>
-        <a class="visit" target="_blank" href="{{ $tv->homepage }}">visit site</a>
-        <p class="description">{{$tv->overview }}</p>
+        <h2 class="title text-white">{{ $tv->name }}</h2>
+        <div class="links">
+            <a class="to-visit" target="_blank" href="{{ $tv->homepage }}">visit site</a>
+            @auth
+                <a href="" class="to-love">Add fav</a>
+                <a href="" class="to-watch">To watch</a>
+            @endauth
+        </div>
+        <p class="description text-white">{{$tv->overview }}</p>
         <div class="genres">
             @foreach ($tv->genres as $genre)
-                <a href="#" class="genre">{{$genre->name}}</a>
+                <a href="#" class="genre text-white">{{$genre->name}}</a>
             @endforeach
         </div>
         <div class="company">

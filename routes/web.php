@@ -16,6 +16,8 @@ Route::get('/movies/{id}', [MovieController::class, 'show']);
 Route::get('/tv', [TvController::class, 'list']);
 Route::get('/tv/{id}', [TvController::class, 'show']);
 
+Route::get('/profil', [UserController::class, 'profilPage']);
+Route::post('/profil', [UserController::class, 'profil']);
 Route::post('/login', [UserController::class, 'login'])->middleware('guest');
 Route::post('/register', [UserController::class, 'register'])->middleware('guest');
-Route::get('/logout', [UserController::class, 'logout'])->middleware('auth');
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');

@@ -2,15 +2,15 @@
 <div class="filmDetails">
     <img src="https://image.tmdb.org/t/p/w400/{{ $movie->poster_path }}" alt="">
     <div class="details">
-        <h2 class="title">{{ $movie->title }}</h2>
+        <h2 class="title text-white">{{ $movie->title }}</h2>
         <div class="links">
             <a class="to-visit" target="_blank" href="{{ $movie->homepage }}">visit site</a>
             @auth
-                <a href="" class="to-love">Add fav</a>
+                <a href="" class="to-love">Add to favorite</a>
                 <a href="" class="to-watch">To watch</a>
             @endauth
         </div>
-        <p class="description">{{$movie->overview }}</p>
+        <p class="description text-white">{{$movie->overview }}</p>
         <div class="genres">
             @foreach ($movie->genres as $genre)
                 <a href="#" class="genre">{{$genre->name}}</a>

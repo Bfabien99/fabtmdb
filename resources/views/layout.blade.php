@@ -22,7 +22,7 @@
                 <li><a href="/profil">Profil</a></li>
                 <li><a href="/favorites">Favorites</a></li>
                 <li><a href="/to-watch">watchlist</a></li>
-                <li><a href="/logout">Logout</a></li>
+                <li><form action="/logout" method="post">@csrf<input type="submit" value="Logout"></form></li>
                 @else
                 <li><a href="/login">Login</a></li>
                 <li><a href="/register">Register</a></li>
