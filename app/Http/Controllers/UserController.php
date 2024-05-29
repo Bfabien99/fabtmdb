@@ -68,6 +68,10 @@ class UserController extends Controller
             return back();
         }
 
+        if(count(auth()->user()->favorite($type, request('id')))>0){
+            return back()->with('success', 'Already in favorite');
+        }
+
         if($type == 'movie'){
             $data = Movie::getMovieById();
             $title = $data->title;
@@ -102,6 +106,10 @@ class UserController extends Controller
         $type = request('type');
         if($type != 'movie' && $type != 'tv'){
             return back();
+        }
+
+        if(count(auth()->user()->watchlist($type, request('id')))>0){
+            return back()->with('success', 'Already in favorite');
         }
 
         if($type == 'movie'){
