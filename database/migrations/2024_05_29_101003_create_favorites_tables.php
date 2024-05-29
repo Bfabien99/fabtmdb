@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('favorites', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id');
-            $table->string('type');
-            $table->string('type_id');
-            $table->timestamps();
+        Schema::table('favorites', function (Blueprint $table) {
+            $table->string('poster_path');
+            $table->string('title');
         });
     }
 

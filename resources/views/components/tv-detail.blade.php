@@ -6,8 +6,16 @@
         <div class="links">
             <a class="to-visit" target="_blank" href="{{ $tv->homepage }}">visit site</a>
             @auth
-                <a href="" class="to-love">Add fav</a>
-                <a href="" class="to-watch">To watch</a>
+                @if (count(auth()->user()->favorite('tv', $tv->id))>0)
+                <a href="/favorites/remove/{{$tv->id}}/tv" class="to-love to-love-full">Del fav</a>
+                @else
+                <a href="/favorites/{{$tv->id}}/tv" class="to-love">Add fav</a>
+                @endif
+                @if (count(auth()->user()->watchlist('tv', $tv->id))>0)
+                <a href="/watchlist/remove/{{$tv->id}}/tv" class="to-watch to-watch-full">Del watch</a>
+                @else
+                <a href="/watchlist/{{$tv->id}}/tv" class="to-watch">To watch</a>
+                @endif
             @endauth
         </div>
         <p class="description text-white">{{$tv->overview }}</p>

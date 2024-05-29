@@ -2,23 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Movie;
+use App\Models\TV;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
     //
-    public function index(){
-        $response_discover_movie = Http::withHeaders([
-            'accept' => 'application/json',
-            'Authorization' => 'Bearer '.env("TMDB_TOKEN")
-        ])->get('https://api.themoviedb.org/3/discover/movie?include_adult=false');
+    private $movie;
+    private $tv;
 
-        $response_discover_tv = Http::withHeaders([
-            'accept' => 'application/json',
-            'Authorization' => 'Bearer '.env("TMDB_TOKEN")
-        ])->get('https://api.themoviedb.org/3/discover/tv?include_adult=false');
-        return view('home', ['discover_movies'=>json_decode($response_discover_movie->getBody()), 'discover_tv' => json_decode($response_discover_tv->getBody())]);
+    public function __construct(){
+        $this->movie = new Movie();
+        $this->tv = new TV();
+    }
+    public function index(){
+        return view('home', ['discover_movies'=> $this->movie->getFewMovie(), 'discover_tv' => $this->tv->getFewTV()]);
     }
 
     public function registerPage(){

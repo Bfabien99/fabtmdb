@@ -193,9 +193,18 @@ section {
     border: 1px solid red;
 }
 
+.filmDetails .links .to-love-full {
+    background-color: red;
+    color: #fff;
+}
+
 .filmDetails .links .to-watch {
     color: green;
     border: 1px solid green;
+}
+.filmDetails .links .to-watch-full {
+    background-color: green;
+    color: #fff;
 }
 
 .filmDetails .links .to-visit:hover {
@@ -211,6 +220,10 @@ section {
 .filmDetails .links .to-watch:hover {
     color: white;
     background-color: green;
+}
+
+.filmDetails .links .to-love-full:hover, .filmDetails .links .to-watch-full:hover{
+    background-color: #17072e;
 }
 
 .filmDetails .details {
@@ -331,6 +344,13 @@ section {
 
 .error {
     color: red;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    text-align: center;
+}
+
+.success {
+    color: green;
     font-weight: bold;
     letter-spacing: 0.2em;
     text-align: center;

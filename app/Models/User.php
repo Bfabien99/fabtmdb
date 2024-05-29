@@ -44,4 +44,20 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function favorites(){
+        return Favorites::where(['user_id' => auth()->user()->id])->get();
+    }
+
+    public function watchlists(){
+        return Watchlist::where(['user_id' => auth()->user()->id])->get();
+    }
+
+    public function favorite($type, $id){
+        return Favorites::where(['user_id' => auth()->user()->id, 'type'=>$type, "type_id"=>$id])->get();
+    }
+
+    public function watchlist($type, $id){
+        return Watchlist::where(['user_id' => auth()->user()->id, 'type'=>$type, "type_id"=>$id])->get();
+    }
 }
